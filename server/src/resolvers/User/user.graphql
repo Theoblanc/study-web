@@ -1,0 +1,10 @@
+type Query {
+  # User
+  fetchMe: UserProfile!
+}
+
+type Mutation {
+  # User
+  loginUser(email: String!, password: String!): TokenModel!
+  createUser(email: String!, password: String!): Result
+}

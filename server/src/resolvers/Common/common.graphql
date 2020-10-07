@@ -1,0 +1,8 @@
+type Result {
+  message: String!
+}
+
+type TokenModel {
+  accessToken: String!
+  refreshToken: String
+}
