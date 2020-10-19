@@ -43,3 +43,7 @@ export const Icon = styled.img`
   width: 250px;
   height: 250px;
 `;
+
+export const Fake = styled.div`
+  margin-top: 20px;
+`;

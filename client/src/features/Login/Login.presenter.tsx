@@ -1,5 +1,5 @@
 import React from "react";
-import { LoginWrapper, Icon } from "./Login.styled";
+import { LoginWrapper, Icon, Fake } from "./Login.styled";
 
 interface IProps {
   onSubmit: Function;
@@ -47,6 +47,10 @@ const LoginPresenter: React.FC<IProps> = ({ register, handleSubmit, onSubmit }) 
 
         <button type='submit'>로그인</button>
       </form>
+
+      <Fake>
+        <span>4</span>
+      </Fake>
     </LoginWrapper>
   );
 };
