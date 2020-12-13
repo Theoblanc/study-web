@@ -1,5 +1,22 @@
 ## NEXT (server side rendering) 스터디 입니다.
 
+## Stack
+
+### frontend
+
+- next.js
+- typescript
+
+### backend
+
+- node.js
+- graphql
+- postgresql
+- docker
+- codegen
+
+## functions
+
 [ ] login
 
 [ ] 알람 기능

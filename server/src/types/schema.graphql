@@ -17,6 +17,10 @@ enum Role {
   ADMIN
 }
 
+type Subscription {
+  testSubscription: User!
+}
+
 type Token {
   id: String!
   createdAt: String!

@@ -50,6 +50,11 @@ export enum IRole {
   Admin = 'ADMIN'
 }
 
+export type ISubscription = {
+  __typename?: 'Subscription';
+  testSubscription: IUser;
+};
+
 export type IToken = {
   __typename?: 'Token';
   id: Scalars['String'];
@@ -169,9 +174,10 @@ export type IResolversTypes = {
   Mutation: ResolverTypeWrapper<{}>;
   TokenModel: ResolverTypeWrapper<ITokenModel>;
   Result: ResolverTypeWrapper<IResult>;
+  Subscription: ResolverTypeWrapper<{}>;
+  User: ResolverTypeWrapper<IUser>;
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
   Token: ResolverTypeWrapper<IToken>;
-  User: ResolverTypeWrapper<IUser>;
 };
 
 /** Mapping between all available schema types and the resolvers parents */
@@ -182,9 +188,10 @@ export type IResolversParentTypes = {
   Mutation: {};
   TokenModel: ITokenModel;
   Result: IResult;
+  Subscription: {};
+  User: IUser;
   Boolean: Scalars['Boolean'];
   Token: IToken;
-  User: IUser;
 };
 
 export type IMutationResolvers<ContextType = any, ParentType extends IResolversParentTypes['Mutation'] = IResolversParentTypes['Mutation']> = {
@@ -200,6 +207,10 @@ export type IQueryResolvers<ContextType = any, ParentType extends IResolversPare
 export type IResultResolvers<ContextType = any, ParentType extends IResolversParentTypes['Result'] = IResolversParentTypes['Result']> = {
   message?: Resolver<IResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType>;
+};
+
+export type ISubscriptionResolvers<ContextType = any, ParentType extends IResolversParentTypes['Subscription'] = IResolversParentTypes['Subscription']> = {
+  testSubscription?: SubscriptionResolver<IResolversTypes['User'], "testSubscription", ParentType, ContextType>;
 };
 
 export type ITokenResolvers<ContextType = any, ParentType extends IResolversParentTypes['Token'] = IResolversParentTypes['Token']> = {
@@ -240,6 +251,7 @@ export type IResolvers<ContextType = any> = {
   Mutation?: IMutationResolvers<ContextType>;
   Query?: IQueryResolvers<ContextType>;
   Result?: IResultResolvers<ContextType>;
+  Subscription?: ISubscriptionResolvers<ContextType>;
   Token?: ITokenResolvers<ContextType>;
   TokenModel?: ITokenModelResolvers<ContextType>;
   User?: IUserResolvers<ContextType>;
